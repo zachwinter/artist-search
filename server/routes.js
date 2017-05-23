@@ -3,17 +3,17 @@ module.exports = (app, api) => {
     res.send('Last.fm Artist Search')
   })
 
-	app.get('/artist/:artist', (req, res) => {
+  app.get('/artist/:artist', (req, res) => {
     res.header('Content-Type', 'application/json')
     res.header('Access-Control-Allow-Origin', '*')
     
-		api.artistInfo({ name: req.params.artist }, (err, artist) => {
+    api.artistInfo({ name: req.params.artist }, (err, artist) => {
       if (err) {
         console.log(err)
       } else {
         res.send(artist)
-      }		})
-	})
+      }   })
+  })
 
   app.get('/artist/:artist/similar', (req, res) => {
     res.header('Content-Type', 'application/json')
