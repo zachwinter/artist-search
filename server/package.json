@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Last.fm API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zach Winter",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "last-fm": "^5.0.0",
+    "morgan": "^1.8.1"
+  } 
+}
