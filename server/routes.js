@@ -12,7 +12,8 @@ module.exports = (app, api) => {
         console.log(err)
       } else {
         res.send(artist)
-      }   })
+      }
+    })
   })
 
   app.get('/artist/:artist/similar', (req, res) => {
