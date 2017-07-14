@@ -1,0 +1,77 @@
+@import 'mixins/import';
+
+/* Colors */
+$white: #ffffff;
+$black: #333;
+$gray: #6d6d6d;
+$blue: #41A8DF;
+$pink: #E72271;
+
+$base-color: $gray;
+$secondary-color: $pink;
+
+/* Base */
+$base-transition: 0.2s ease-in-out;
+$base-margin: 20px;
+
+/* Viewport */
+$outer-padding: 20px;
+$mobile-outer-padding: 10px;
+$master-max-width: 1280px;
+$grid-columns: 12;
+$max-width: $master-max-width + ($outer-padding * 2);
+
+$breakpoints: (
+  1280: new-breakpoint(max-width 1280px $grid-columns),
+  1024: new-breakpoint(max-width 1024px $grid-columns),
+  900:  new-breakpoint(max-width 900px  $grid-columns),
+  768:  new-breakpoint(max-width 768px  $grid-columns),
+  640:  new-breakpoint(max-width 640px  $grid-columns),
+  480:  new-breakpoint(max-width 480px  $grid-columns),
+  400:  new-breakpoint(max-width 480px  $grid-columns),
+  320:  new-breakpoint(max-width 320px  $grid-columns)
+);
+
+@mixin bp($bp) {
+  $breakpoint: map-get($breakpoints, $bp);
+
+  @include media($breakpoint) { @content; }
+}
+
+/* Typography */
+$light: 300;
+$normal: 400;
+$bold: 700;
+$sans-serif: 'Open Sans', sans-serif;
+$serif: 'Merriweather', serif;
+
+%base-text {
+  font-family: $sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: .035em;
+  font-weight: $light;
+  text-decoration: none;
+}
+
+%heading {
+  font-family: $sans-serif;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: $bold;
+}
+
+%sub-heading {
+  font-family: $sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  font-weight: $normal;
+}
+
+%small-heading {
+  font-family: $sans-serif;
+  font-size: 16px;
+  font-weight: $bold;
+  text-transform: uppercase;
+}

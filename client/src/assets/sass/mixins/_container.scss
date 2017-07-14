@@ -1,0 +1,8 @@
+@mixin container($padding: false) {
+	@include size(100% auto);
+	@include clearfix;
+	@if $padding { @include outer-padding; }
+	clear: both;
+	max-width: $max-width;
+	margin: 0 auto;
+}
